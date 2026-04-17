@@ -8,7 +8,7 @@ import { BrandMark } from "./BrandMark";
 const navLinkClass = ({ isActive }) =>
   [
     "transition-colors duration-200",
-    isActive ? "text-white" : "text-slate-300 hover:text-white",
+    isActive ? "text-slate-900 font-medium" : "text-slate-600 hover:text-slate-900",
   ].join(" ");
 
 export function Navbar() {
@@ -37,13 +37,13 @@ export function Navbar() {
       }}
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="mx-auto w-[min(1220px,calc(100%-1.25rem))] rounded-[1.7rem] border border-white/10 px-4 sm:px-6">
+      <div className="mx-auto w-[min(1220px,calc(100%-1.25rem))] rounded-[1.7rem] border border-sky-200/70 px-4 sm:px-6">
         <motion.div
-          className="absolute inset-0 rounded-[1.7rem] border border-white/8"
+          className="absolute inset-0 rounded-[1.7rem] border border-sky-100"
           animate={{
             backgroundColor: isScrolled
-              ? "rgba(11, 18, 33, 0.92)"
-              : "rgba(11, 18, 33, 0.72)",
+              ? "rgba(255, 255, 255, 0.94)"
+              : "rgba(255, 255, 255, 0.80)",
             backdropFilter: isScrolled ? "blur(22px)" : "blur(14px)",
           }}
           transition={{ duration: 0.3 }}
@@ -64,7 +64,7 @@ export function Navbar() {
           <div className="relative z-10 hidden items-center gap-4 md:flex md:justify-self-end">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-5 py-3 text-sm font-medium text-white shadow-[0_0_30px_rgba(122,162,255,0.3)] transition-transform duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-5 py-3 text-sm font-medium text-white shadow-[0_0_30px_rgba(2,132,199,0.25)] transition-transform duration-300 hover:-translate-y-0.5"
             >
               Contact
               <MoveRight size={16} />
@@ -73,7 +73,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sky-200 bg-white text-slate-700 md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((current) => !current)}
           >
@@ -85,7 +85,7 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="mx-auto mt-3 w-[min(1220px,calc(100%-1.25rem))] overflow-hidden rounded-[1.5rem] border border-white/10 bg-[rgba(11,18,33,0.96)] p-4 backdrop-blur-xl md:hidden"
+            className="mx-auto mt-3 w-[min(1220px,calc(100%-1.25rem))] overflow-hidden rounded-[1.5rem] border border-sky-100 bg-white p-4 shadow-lg backdrop-blur-xl md:hidden"
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
@@ -96,7 +96,7 @@ export function Navbar() {
                 <Link
                   key={item.label}
                   to={item.to}
-                  className="rounded-2xl px-4 py-3 text-slate-200 transition-colors hover:bg-white/5 hover:text-white"
+                  className="rounded-2xl px-4 py-3 text-slate-700 transition-colors hover:bg-sky-50 hover:text-slate-900"
                 >
                   {item.label}
                 </Link>

@@ -13,76 +13,60 @@
 }
 
 :root {
-  --background: #060d1b;
-  --surface: #12203b;
-  --border-strong: #2a3d66;
-  --primary: #7aa2ff;
-  --secondary: #9a7cff;
-  --warning: #f4c76d;
-  --font-display: "Instrument Serif", serif;
-  --font-sans: "DM Sans", sans-serif;
-  --font-mono: "Space Mono", monospace;
-  color-scheme: dark;
+  --background:    #f0f9ff;   /* sky-50  */
+  --surface:       #ffffff;
+  --border-strong: #bae6fd;   /* sky-200 */
+  --primary:       #0284c7;   /* sky-600 — contrast-safe on white */
+  --secondary:     #4f46e5;   /* indigo-600 */
+  --warning:       #d97706;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    "JetBrains Mono", monospace;
+  color-scheme: light;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Apple-style heading defaults */
+.font-display {
+  font-weight: 700;
+  letter-spacing: -0.022em;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top, rgba(122, 162, 255, 0.18), transparent 30%),
-    radial-gradient(circle at 78% 12%, rgba(154, 124, 255, 0.14), transparent 26%),
-    radial-gradient(circle at 50% 100%, rgba(125, 211, 252, 0.1), transparent 24%),
+    radial-gradient(circle at top,      rgba(14,165,233,0.10), transparent 40%),
+    radial-gradient(circle at 80% 8%,   rgba(99,102,241,0.07), transparent 30%),
+    radial-gradient(circle at 20% 90%,  rgba(56,189,248,0.08), transparent 28%),
     var(--background);
-  color: #f8fafc;
+  color: #0c1a2e;
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+a   { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+#root { min-height: 100vh; }
 
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-#root {
-  min-height: 100vh;
-}
-
-/* Enhanced PCB circuit grid — dots at intersections + orthogonal lines */
+/* PCB grid — very subtle on white */
 .circuit-grid {
   background-image:
-    radial-gradient(circle, rgba(122, 162, 255, 0.18) 1px, transparent 1px),
-    linear-gradient(rgba(160, 188, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(160, 188, 255, 0.05) 1px, transparent 1px),
-    radial-gradient(circle at top, rgba(122, 162, 255, 0.18), transparent 35%);
-  background-size: 72px 72px, 72px 72px, 72px 72px, 100% 100%;
-  background-position: 0 0, 0 0, 0 0, 0 0;
-  mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.14));
+    radial-gradient(circle, rgba(14,165,233,0.12) 1px, transparent 1px),
+    linear-gradient(rgba(14,165,233,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,165,233,0.05) 1px, transparent 1px);
+  background-size: 72px 72px, 72px 72px, 72px 72px;
+  background-position: 0 0, 0 0, 0 0;
+  mask-image: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.06));
 }
 
 .text-outline {
   color: transparent;
-  -webkit-text-stroke: 1px rgba(196, 220, 255, 0.9);
-  text-shadow: 0 0 22px rgba(122, 162, 255, 0.14);
-}
-
-/* Logo gradient border — applied via inline style on BrandMark */
-.logo-gradient-border {
-  background:
-    linear-gradient(#050918, #050918) padding-box,
-    linear-gradient(135deg, #7aa2ff, #9a7cff) border-box;
-  border: 1.5px solid transparent;
+  -webkit-text-stroke: 1.5px rgba(2,132,199,0.75);
+  text-shadow: none;
 }
 
 .logo-shimmer::after {
@@ -93,56 +77,44 @@ textarea {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.06) 35%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0.06) 65%,
+    rgba(255,255,255,0.08) 35%,
+    rgba(255,255,255,0.55) 50%,
+    rgba(255,255,255,0.08) 65%,
     transparent 100%
   );
   animation: shimmer 3.8s linear infinite;
 }
+@keyframes shimmer { to { transform: translateX(120%) rotate(18deg); } }
 
-@keyframes shimmer {
-  to {
-    transform: translateX(120%) rotate(18deg);
-  }
-}
-
-/* Animated gradient text (used on hero heading accent) */
+/* Animated gradient text — sky → indigo */
 .animate-gradient-text {
-  background: linear-gradient(90deg, #93c5fd, #7aa2ff, #c084fc, #9a7cff, #7aa2ff, #93c5fd);
+  background: linear-gradient(90deg, #0284c7, #0ea5e9, #4f46e5, #818cf8, #0ea5e9, #0284c7);
   background-size: 300% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradient-shift 6s ease infinite;
 }
-
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50%       { background-position: 100% 50%; }
+  0%,100% { background-position: 0% 50%; }
+  50%     { background-position: 100% 50%; }
 }
 
-/* Gentle float for decorative elements */
 @keyframes float-up {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-10px); }
 }
+.animate-float { animation: float-up 5s ease-in-out infinite; }
 
-.animate-float {
-  animation: float-up 5s ease-in-out infinite;
-}
-
-/* Gradient border for cards — logo-inspired */
-.card-gradient-border {
-  position: relative;
-}
+/* Hover gradient border for cards */
+.card-gradient-border { position: relative; }
 .card-gradient-border::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(122,162,255,0.5), rgba(154,124,255,0.5));
+  background: linear-gradient(135deg, rgba(2,132,199,0.45), rgba(79,70,229,0.45));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -150,6 +122,4 @@ textarea {
   transition: opacity 0.3s ease;
   pointer-events: none;
 }
-.card-gradient-border:hover::before {
-  opacity: 1;
-}
+.card-gradient-border:hover::before { opacity: 1; }

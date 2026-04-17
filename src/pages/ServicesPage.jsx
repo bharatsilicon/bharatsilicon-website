@@ -9,13 +9,13 @@ export function ServicesPage() {
     <div className="mx-auto w-[min(1180px,calc(100%-1.5rem))] pb-24">
       <section className="py-10 md:py-20">
         <Reveal>
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.22em] text-primary">
+          <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.22em] text-sky-700">
             Service Portfolio
           </div>
-          <h1 className="mt-6 max-w-4xl text-balance font-display text-5xl leading-[0.96] text-white md:text-6xl">
+          <h1 className="mt-6 max-w-4xl text-balance font-display text-5xl leading-[1.04] tracking-[-0.03em] text-slate-900 md:text-6xl">
             Automotive verification services that move from architecture to sign-off.
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
             Bharat Silicon supports end-to-end verification programs for automotive SoCs with
             practical delivery across UVM, formal, GLS, automation, and methodology definition.
           </p>
@@ -25,33 +25,33 @@ export function ServicesPage() {
       <section className="grid gap-6">
         {serviceDetails.map((service, index) => (
           <Reveal key={service.title} delay={index * 0.05}>
-            <article className="grid gap-8 rounded-[2rem] border border-white/10 bg-[linear-gradient(160deg,rgba(22,35,66,0.88),rgba(9,15,29,0.96))] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.45)] lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
+            <article className="grid gap-8 rounded-[2rem] border border-sky-100 bg-white p-6 shadow-[0_4px_24px_rgba(14,165,233,0.08)] lg:grid-cols-[0.95fr_1.05fr] lg:p-8">
               <div>
                 <div className="font-mono text-xs uppercase tracking-[0.24em] text-secondary">
                   Service {String(index + 1).padStart(2, "0")}
                 </div>
-                <h2 className="mt-4 font-display text-4xl leading-tight text-white">
+                <h2 className="mt-4 font-display text-4xl leading-tight text-slate-900">
                   {service.title}
                 </h2>
-                <p className="mt-5 text-lg leading-8 text-slate-300">{service.summary}</p>
+                <p className="mt-5 text-lg leading-8 text-slate-600">{service.summary}</p>
               </div>
 
               <div className="grid gap-5 md:grid-cols-2">
-                <div className="rounded-[1.5rem] border border-white/8 bg-[rgba(8,14,30,0.56)] p-5">
+                <div className="rounded-[1.5rem] border border-sky-100 bg-sky-50/60 p-5">
                   <h3 className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
                     Use Cases
                   </h3>
-                  <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
+                  <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-600">
                     {service.useCases.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-[1.5rem] border border-white/8 bg-[rgba(8,14,30,0.56)] p-5">
-                  <h3 className="font-mono text-xs uppercase tracking-[0.22em] text-sky-200">
+                <div className="rounded-[1.5rem] border border-sky-100 bg-sky-50/60 p-5">
+                  <h3 className="font-mono text-xs uppercase tracking-[0.22em] text-sky-600">
                     Deliverables
                   </h3>
-                  <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-300">
+                  <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-600">
                     {service.deliverables.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
@@ -80,7 +80,7 @@ export function ServicesPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="rounded-[1.5rem] border border-white/8 bg-[linear-gradient(160deg,rgba(22,35,66,0.82),rgba(9,15,29,0.94))] p-5 text-base leading-8 text-slate-300"
+                className="rounded-[1.5rem] border border-sky-100 bg-sky-50/60 p-5 text-base leading-8 text-slate-600"
               >
                 {item}
               </div>
@@ -90,19 +90,19 @@ export function ServicesPage() {
       </section>
 
       <Reveal>
-        <div className="rounded-[2rem] border border-primary/20 bg-[linear-gradient(145deg,rgba(122,162,255,0.18),rgba(10,14,22,0.96),rgba(154,124,255,0.16))] p-8">
+        <div className="rounded-[2rem] border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-indigo-50 p-8 shadow-[0_4px_30px_rgba(14,165,233,0.10)]">
           <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
             <div>
-              <div className="font-mono text-xs uppercase tracking-[0.24em] text-slate-400">
+              <div className="font-mono text-xs uppercase tracking-[0.24em] text-slate-500">
                 Next step
               </div>
-              <h2 className="mt-3 font-display text-4xl text-white">
+              <h2 className="mt-3 font-display text-4xl text-slate-900">
                 Need a verification partner for your next milestone?
               </h2>
             </div>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 font-medium text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3.5 font-medium text-white shadow-[0_0_20px_rgba(2,132,199,0.25)] transition-all duration-300 hover:-translate-y-0.5"
             >
               Start the conversation
               <ArrowRight size={16} />

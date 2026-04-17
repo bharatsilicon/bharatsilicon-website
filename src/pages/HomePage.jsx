@@ -17,40 +17,38 @@ import {
 function HeroSection() {
   return (
     <section className="relative overflow-hidden">
-      {/* Circuit decoration — background accent matching logo */}
       <CircuitDecoration
         instanceId="hero"
-        className="pointer-events-none absolute right-[-4%] top-[-14%] hidden w-[560px] opacity-[0.13] lg:block"
+        className="pointer-events-none absolute right-[-4%] top-[-14%] hidden w-[560px] opacity-[0.10] lg:block"
       />
 
       <div className="mx-auto grid w-[min(1180px,calc(100%-1.5rem))] gap-12 py-10 md:grid-cols-[1.15fr_0.85fr] md:py-20">
         <Reveal className="space-y-8">
-          {/* Animated badge */}
           <motion.div
-            className="inline-flex items-center gap-3 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 font-mono text-[0.74rem] uppercase tracking-[0.24em] text-sky-100"
+            className="inline-flex items-center gap-3 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 font-mono text-[0.74rem] uppercase tracking-[0.24em] text-sky-700"
             animate={{
               boxShadow: [
-                "0 0 0px rgba(122,162,255,0)",
-                "0 0 20px rgba(122,162,255,0.3)",
-                "0 0 0px rgba(122,162,255,0)",
+                "0 0 0px rgba(2,132,199,0)",
+                "0 0 16px rgba(2,132,199,0.18)",
+                "0 0 0px rgba(2,132,199,0)",
               ],
             }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
             <span className="relative flex h-3 w-3 items-center justify-center">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/50" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
             </span>
             Automotive SoC Verification Experts
           </motion.div>
 
           <div className="space-y-6">
-            <h1 className="max-w-4xl text-balance font-display text-5xl leading-[0.94] text-white sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-4xl text-balance font-display text-5xl leading-[1.02] tracking-[-0.03em] text-slate-900 sm:text-6xl lg:text-7xl">
               End-to-End{" "}
               <span className="animate-gradient-text italic">Verification</span> for Next-Gen{" "}
               <span className="text-outline">Silicon</span>
             </h1>
-            <p className="max-w-2xl text-pretty text-lg leading-8 text-slate-300">
+            <p className="max-w-2xl text-pretty text-lg leading-8 text-slate-600">
               Bharat Silicon helps automotive teams reach sign-off with confidence through UVM,
               formal verification, gate-level simulation, and scalable testbench architecture.
             </p>
@@ -59,14 +57,14 @@ function HeroSection() {
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3.5 text-sm font-medium text-white shadow-[0_0_30px_rgba(122,162,255,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_45px_rgba(122,162,255,0.55)]"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3.5 text-sm font-medium text-white shadow-[0_0_24px_rgba(2,132,199,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(2,132,199,0.45)]"
             >
               Start a Project
               <ArrowRight size={16} />
             </Link>
             <Link
               to="/#services"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/[0.12] bg-white/[0.05] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:shadow-[0_0_24px_rgba(122,162,255,0.18)]"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-sky-200 bg-white px-6 py-3.5 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-primary/50 hover:bg-sky-50 hover:text-primary"
             >
               Explore Services
               <ArrowUpRight size={16} />
@@ -77,33 +75,31 @@ function HeroSection() {
         </Reveal>
 
         <Reveal delay={0.15} className="flex items-center">
-          <div className="card-gradient-border relative w-full overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(165deg,rgba(24,38,72,0.96),rgba(18,32,59,0.9),rgba(8,14,28,0.96))] p-6 shadow-[0_30px_100px_rgba(5,10,28,0.7)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(122,162,255,0.18),transparent_34%),radial-gradient(circle_at_90%_10%,rgba(154,124,255,0.12),transparent_28%)]" />
-            {/* PCB trace accent lines — top-right corner */}
-            <div className="pointer-events-none absolute right-5 top-5 flex flex-col items-end gap-[5px] opacity-40">
+          <div className="card-gradient-border relative w-full overflow-hidden rounded-[2rem] border border-sky-100 bg-white p-6 shadow-[0_12px_50px_rgba(14,165,233,0.12)]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.06),transparent_34%),radial-gradient(circle_at_90%_10%,rgba(79,70,229,0.04),transparent_28%)]" />
+            <div className="pointer-events-none absolute right-5 top-5 flex flex-col items-end gap-[5px] opacity-30">
               <div className="h-px w-16 rounded-full bg-gradient-to-l from-primary to-transparent" />
               <div className="h-px w-10 rounded-full bg-gradient-to-l from-secondary to-transparent" />
               <div className="h-px w-20 rounded-full bg-gradient-to-l from-primary/60 to-transparent" />
             </div>
-            {/* PCB trace accent lines — bottom-left corner */}
-            <div className="pointer-events-none absolute bottom-5 left-5 flex flex-col gap-[5px] opacity-40">
+            <div className="pointer-events-none absolute bottom-5 left-5 flex flex-col gap-[5px] opacity-30">
               <div className="h-px w-12 rounded-full bg-gradient-to-r from-secondary to-transparent" />
               <div className="h-px w-8 rounded-full bg-gradient-to-r from-primary to-transparent" />
             </div>
 
             <div className="relative space-y-6">
-              <div className="flex items-center justify-between border-b border-white/[0.08] pb-4">
+              <div className="flex items-center justify-between border-b border-sky-100 pb-4">
                 <div>
                   <div className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
                     Verification Command Layer
                   </div>
-                  <div className="mt-2 font-display text-2xl text-white">
+                  <div className="mt-2 font-display text-2xl text-slate-900">
                     First-pass silicon, engineered deliberately.
                   </div>
                 </div>
                 <motion.div
-                  className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-mono text-xs uppercase tracking-[0.18em] text-sky-200"
-                  animate={{ borderColor: ["rgba(122,162,255,0.2)", "rgba(154,124,255,0.5)", "rgba(122,162,255,0.2)"] }}
+                  className="rounded-full border border-primary/25 bg-sky-50 px-3 py-1 font-mono text-xs uppercase tracking-[0.18em] text-sky-700"
+                  animate={{ borderColor: ["rgba(2,132,199,0.25)", "rgba(79,70,229,0.5)", "rgba(2,132,199,0.25)"] }}
                   transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
                 >
                   ISO 26262
@@ -119,23 +115,23 @@ function HeroSection() {
                 ].map(([label, detail]) => (
                   <motion.div
                     key={label}
-                    className="rounded-3xl border border-white/[0.08] bg-[rgba(8,14,30,0.58)] p-4 transition-colors duration-300 hover:border-primary/30 hover:bg-[rgba(8,14,30,0.75)]"
+                    className="rounded-3xl border border-sky-100 bg-sky-50/60 p-4 transition-colors duration-300 hover:border-sky-200 hover:bg-sky-50"
                     whileHover={{ y: -2 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="font-mono text-xs uppercase tracking-[0.2em] text-slate-400">
+                    <div className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
                       {label}
                     </div>
-                    <div className="mt-3 text-lg leading-7 text-slate-100">{detail}</div>
+                    <div className="mt-3 text-lg leading-7 text-slate-800">{detail}</div>
                   </motion.div>
                 ))}
               </div>
 
-              <div className="rounded-[1.6rem] border border-white/[0.08] bg-[rgba(8,14,30,0.62)] p-5">
+              <div className="rounded-[1.6rem] border border-sky-100 bg-sky-50/60 p-5">
                 <div className="font-mono text-xs uppercase tracking-[0.18em] text-slate-500">
                   Engagement Focus
                 </div>
-                <ul className="mt-4 space-y-3 text-sm text-slate-300">
+                <ul className="mt-4 space-y-3 text-sm text-slate-600">
                   {[
                     "Reusable UVM environments for IP, subsystem, and SoC programs.",
                     "Formal-driven bug finding to accelerate closure on control-intensive logic.",
@@ -159,18 +155,18 @@ function HeroSection() {
 function StatsBar() {
   return (
     <Reveal className="mx-auto mt-2 w-[min(1180px,calc(100%-1.5rem))]">
-      <div className="grid gap-4 rounded-[2rem] border border-white/10 bg-[linear-gradient(155deg,rgba(20,33,61,0.88),rgba(9,15,29,0.95))] p-6 shadow-[0_20px_80px_rgba(2,6,23,0.55)] md:grid-cols-4">
+      <div className="grid gap-4 rounded-[2rem] border border-sky-100 bg-white p-6 shadow-[0_4px_30px_rgba(14,165,233,0.08)] md:grid-cols-4">
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}
-            className="rounded-[1.4rem] border border-white/[0.08] bg-[rgba(8,14,30,0.55)] p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-[0_0_24px_rgba(122,162,255,0.12)]"
+            className="rounded-[1.4rem] border border-sky-100 bg-sky-50/70 p-5 transition-all duration-300 hover:border-sky-200 hover:shadow-[0_0_20px_rgba(2,132,199,0.10)]"
             whileHover={{ y: -3 }}
             transition={{ duration: 0.25 }}
           >
             <Counter
               value={stat.value}
               suffix={stat.suffix}
-              className="bg-gradient-to-r from-sky-200 via-primary to-secondary bg-clip-text font-mono text-4xl font-bold text-transparent"
+              className="bg-gradient-to-r from-primary via-sky-500 to-secondary bg-clip-text font-mono text-4xl font-bold text-transparent"
             />
             <p className="mt-3 font-mono text-xs uppercase tracking-[0.22em] text-slate-500">
               {stat.label}
@@ -200,30 +196,30 @@ function ServicesSection() {
           return (
             <Reveal key={service.title} delay={index * 0.06}>
               <motion.article
-                className="card-gradient-border group relative h-full overflow-hidden rounded-[1.75rem] border border-white/[0.08] bg-[linear-gradient(165deg,rgba(24,38,72,0.86),rgba(9,15,29,0.96))] p-6 shadow-[0_18px_40px_rgba(2,6,23,0.4)]"
+                className="card-gradient-border group relative h-full overflow-hidden rounded-[1.75rem] border border-sky-100 bg-white p-6 shadow-[0_4px_24px_rgba(14,165,233,0.08)]"
                 whileHover={{ y: -4, transition: { duration: 0.25 } }}
               >
                 <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <motion.div
                   className="absolute inset-0 rounded-[1.75rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  style={{ background: "radial-gradient(circle at 50% 0%, rgba(122,162,255,0.08), transparent 60%)" }}
+                  style={{ background: "radial-gradient(circle at 50% 0%, rgba(14,165,233,0.04), transparent 60%)" }}
                 />
                 <div className="relative flex items-start justify-between gap-4">
                   <motion.div
-                    className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/25 bg-primary/10 text-primary"
+                    className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/20 bg-sky-50 text-primary"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.2 }}
                   >
                     <Icon size={20} />
                   </motion.div>
-                  <div className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-sky-100">
+                  <div className="rounded-full border border-sky-200 bg-sky-50 px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-sky-700">
                     {service.tag}
                   </div>
                 </div>
-                <h3 className="relative mt-6 font-display text-3xl leading-tight text-white">
+                <h3 className="relative mt-6 font-display text-3xl leading-tight text-slate-900">
                   {service.title}
                 </h3>
-                <p className="relative mt-4 text-base leading-8 text-slate-300">
+                <p className="relative mt-4 text-base leading-8 text-slate-600">
                   {service.description}
                 </p>
               </motion.article>
@@ -250,27 +246,27 @@ function MethodologySection() {
         {methodologySteps.map((step, index) => (
           <Reveal key={step.title} delay={index * 0.08}>
             <motion.div
-              className="relative h-full rounded-[1.75rem] border border-white/10 bg-[linear-gradient(165deg,rgba(20,33,61,0.8),rgba(9,15,29,0.96))] p-6 lg:before:absolute lg:before:right-0 lg:before:top-8 lg:before:h-[calc(100%-4rem)] lg:before:w-px lg:before:bg-white/10 last:lg:before:hidden"
-              whileHover={{ y: -3, borderColor: "rgba(122,162,255,0.35)", transition: { duration: 0.25 } }}
+              className="relative h-full rounded-[1.75rem] border border-sky-100 bg-white p-6 lg:before:absolute lg:before:right-0 lg:before:top-8 lg:before:h-[calc(100%-4rem)] lg:before:w-px lg:before:bg-sky-100 last:lg:before:hidden"
+              whileHover={{ y: -3, borderColor: "rgba(2,132,199,0.35)", transition: { duration: 0.25 } }}
             >
               <div className="mb-6 flex items-center gap-4">
                 <span className="relative flex h-4 w-4 items-center justify-center">
-                  <span className="absolute h-full w-full rounded-full bg-primary/30 blur-sm" />
+                  <span className="absolute h-full w-full rounded-full bg-primary/20 blur-sm" />
                   <motion.span
                     className="relative h-3 w-3 rounded-full bg-primary"
-                    animate={{ boxShadow: ["0 0 0px rgba(122,162,255,0)", "0 0 10px rgba(122,162,255,0.8)", "0 0 0px rgba(122,162,255,0)"] }}
+                    animate={{ boxShadow: ["0 0 0px rgba(2,132,199,0)", "0 0 8px rgba(2,132,199,0.7)", "0 0 0px rgba(2,132,199,0)"] }}
                     transition={{ duration: 2.5, delay: index * 0.4, repeat: Infinity }}
                   />
                 </span>
-                <div className="font-mono text-xs uppercase tracking-[0.24em] text-slate-400">
+                <div className="font-mono text-xs uppercase tracking-[0.24em] text-slate-500">
                   Step {index + 1}
                 </div>
               </div>
-              <h3 className="font-display text-3xl text-white">{step.title}</h3>
+              <h3 className="font-display text-3xl text-slate-900">{step.title}</h3>
               <p className="mt-2 font-mono text-xs uppercase tracking-[0.2em] text-secondary">
                 {step.subtitle}
               </p>
-              <p className="mt-5 text-base leading-8 text-slate-300">{step.description}</p>
+              <p className="mt-5 text-base leading-8 text-slate-600">{step.description}</p>
             </motion.div>
           </Reveal>
         ))}
@@ -282,16 +278,16 @@ function MethodologySection() {
 function toneClasses(tone) {
   switch (tone) {
     case "green":
-      return { text: "text-sky-300", bar: "from-primary to-cyan-300" };
+      return { text: "text-primary", bar: "from-primary to-cyan-400" };
     case "amber":
-      return { text: "text-warning", bar: "from-warning to-amber-300" };
+      return { text: "text-warning", bar: "from-warning to-amber-400" };
     case "gradient":
       return {
-        text: "bg-gradient-to-r from-primary via-sky-300 to-secondary bg-clip-text text-transparent",
+        text: "bg-gradient-to-r from-primary via-sky-400 to-secondary bg-clip-text text-transparent",
         bar: "from-primary via-sky-400 to-secondary",
       };
     default:
-      return { text: "text-primary", bar: "from-primary to-sky-300" };
+      return { text: "text-primary", bar: "from-primary to-sky-400" };
   }
 }
 
@@ -307,12 +303,12 @@ function VerificationDashboard() {
       </Reveal>
 
       <Reveal delay={0.12} className="mt-12">
-        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(155deg,rgba(20,33,61,0.92),rgba(9,15,29,0.98))] shadow-[0_24px_80px_rgba(2,6,23,0.65)]">
-          <div className="flex items-center gap-2 border-b border-white/[0.08] px-6 py-4">
+        <div className="overflow-hidden rounded-[2rem] border border-sky-100 bg-white shadow-[0_4px_30px_rgba(14,165,233,0.10)]">
+          <div className="flex items-center gap-2 border-b border-sky-100 px-6 py-4">
             <span className="h-3 w-3 rounded-full bg-red-400" />
             <span className="h-3 w-3 rounded-full bg-yellow-400" />
             <span className="h-3 w-3 rounded-full bg-green-400" />
-            <span className="ml-4 font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
+            <span className="ml-4 font-mono text-xs uppercase tracking-[0.2em] text-slate-400">
               verification_status.log
             </span>
           </div>
@@ -324,14 +320,14 @@ function VerificationDashboard() {
               return (
                 <motion.div
                   key={metric.label}
-                  className="rounded-[1.5rem] border border-white/[0.08] bg-[rgba(8,14,30,0.58)] p-5 transition-colors duration-300 hover:border-primary/25"
+                  className="rounded-[1.5rem] border border-sky-100 bg-sky-50/60 p-5 transition-colors duration-300 hover:border-sky-200"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.35 }}
                   transition={{ duration: 0.65, delay: index * 0.08 }}
                 >
                   <div className="flex items-center justify-between gap-4">
-                    <div className="font-mono text-xs uppercase tracking-[0.2em] text-slate-400">
+                    <div className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
                       {metric.label}
                     </div>
                     <div className={`font-mono text-lg font-bold ${tone.text}`}>
@@ -339,9 +335,9 @@ function VerificationDashboard() {
                     </div>
                   </div>
 
-                  <div className="mt-5 h-3 overflow-hidden rounded-full bg-white/[0.06]">
+                  <div className="mt-5 h-3 overflow-hidden rounded-full bg-sky-100">
                     <motion.div
-                      className={`h-full rounded-full bg-gradient-to-r ${tone.bar} shadow-[0_0_8px_rgba(122,162,255,0.4)]`}
+                      className={`h-full rounded-full bg-gradient-to-r ${tone.bar} shadow-[0_0_8px_rgba(2,132,199,0.3)]`}
                       initial={{ width: 0 }}
                       whileInView={{ width: `${metric.value}%` }}
                       viewport={{ once: true, amount: 0.75 }}
@@ -376,27 +372,27 @@ function TechnologySection() {
           return (
             <Reveal key={item.name} delay={index * 0.04}>
               <motion.div
-                className="group rounded-[1.55rem] border border-white/[0.08] bg-[linear-gradient(165deg,rgba(20,33,61,0.82),rgba(9,15,29,0.96))] p-5"
+                className="group rounded-[1.55rem] border border-sky-100 bg-white p-5"
                 whileHover={{
                   y: -4,
-                  borderColor: "rgba(122,162,255,0.5)",
-                  boxShadow: "0 0 30px rgba(122,162,255,0.18)",
+                  borderColor: "rgba(2,132,199,0.4)",
+                  boxShadow: "0 0 24px rgba(2,132,199,0.12)",
                   transition: { duration: 0.25 },
                 }}
               >
                 <div className="flex items-center justify-between">
                   <motion.div
-                    className="flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/25 bg-primary/10 text-primary"
+                    className="flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/20 bg-sky-50 text-primary"
                     whileHover={{ scale: 1.12, rotate: -6 }}
                     transition={{ duration: 0.2 }}
                   >
                     <Icon size={18} />
                   </motion.div>
-                  <span className="rounded-full border border-white/[0.08] bg-white/[0.05] px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-slate-400">
+                  <span className="rounded-full border border-sky-100 bg-sky-50 px-3 py-1 font-mono text-[0.68rem] uppercase tracking-[0.18em] text-slate-500">
                     {item.type}
                   </span>
                 </div>
-                <h3 className="mt-5 text-xl font-medium text-white">{item.name}</h3>
+                <h3 className="mt-5 text-xl font-medium text-slate-900">{item.name}</h3>
               </motion.div>
             </Reveal>
           );
@@ -410,31 +406,29 @@ function CTASection() {
   return (
     <section className="mx-auto w-[min(1180px,calc(100%-1.5rem))] py-10 pb-24">
       <Reveal>
-        <div className="relative overflow-hidden rounded-[2.2rem] border border-primary/20 bg-[linear-gradient(145deg,rgba(122,162,255,0.22),rgba(12,20,39,0.96),rgba(154,124,255,0.18))] px-6 py-12 shadow-[0_30px_120px_rgba(30,64,175,0.24)] sm:px-10 md:px-14">
-          <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.18] blur-[110px]" />
+        <div className="relative overflow-hidden rounded-[2.2rem] border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-indigo-50 px-6 py-12 shadow-[0_8px_60px_rgba(14,165,233,0.12)] sm:px-10 md:px-14">
+          <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/[0.06] blur-[110px]" />
 
-          {/* Circuit decoration in CTA corner */}
           <CircuitDecoration
             instanceId="cta"
-            className="pointer-events-none absolute -right-16 -top-16 w-72 opacity-[0.14]"
+            className="pointer-events-none absolute -right-16 -top-16 w-72 opacity-[0.10]"
           />
 
-          {/* PCB trace accents */}
-          <div className="pointer-events-none absolute left-6 top-6 flex flex-col gap-[6px] opacity-50">
+          <div className="pointer-events-none absolute left-6 top-6 flex flex-col gap-[6px] opacity-40">
             <div className="h-px w-14 rounded-full bg-gradient-to-r from-primary to-transparent" />
             <div className="h-px w-9 rounded-full bg-gradient-to-r from-secondary to-transparent" />
-            <div className="h-px w-18 rounded-full bg-gradient-to-r from-sky-300/60 to-transparent" />
+            <div className="h-px w-18 rounded-full bg-gradient-to-r from-sky-400/60 to-transparent" />
           </div>
 
           <div className="relative z-10">
             <div className="max-w-3xl">
-              <p className="font-mono text-xs uppercase tracking-[0.24em] text-slate-300">
+              <p className="font-mono text-xs uppercase tracking-[0.24em] text-sky-600">
                 Let&apos;s talk silicon readiness
               </p>
-              <h2 className="mt-4 text-balance font-display text-4xl leading-tight text-white md:text-5xl">
+              <h2 className="mt-4 text-balance font-display text-4xl leading-tight text-slate-900 md:text-5xl">
                 Ready to achieve first-pass silicon success?
               </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-300">
+              <p className="mt-5 text-lg leading-8 text-slate-600">
                 Engage Bharat Silicon for verification strategy, execution, and closure support on
                 your next automotive SoC program.
               </p>
@@ -443,8 +437,8 @@ function CTASection() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <motion.a
                 href="mailto:admin.bharatsilicon@gmail.com"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 font-medium text-slate-950 transition-transform duration-300 hover:-translate-y-0.5"
-                whileHover={{ boxShadow: "0 10px 40px rgba(255,255,255,0.25)" }}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3.5 font-medium text-white shadow-[0_0_24px_rgba(2,132,199,0.30)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(2,132,199,0.50)]"
+                whileHover={{ scale: 1.02 }}
               >
                 <Mail size={16} />
                 admin.bharatsilicon@gmail.com

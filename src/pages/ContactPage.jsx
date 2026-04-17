@@ -5,10 +5,7 @@ import { Reveal } from "../components/Reveal";
 import { SectionHeading } from "../components/SectionHeading";
 import { contactDetails } from "../data/siteContent";
 
-const initialForm = {
-  email: "",
-  message: "",
-};
+const initialForm = { email: "", message: "" };
 
 export function ContactPage() {
   const [form, setForm] = useState(initialForm);
@@ -16,7 +13,6 @@ export function ContactPage() {
 
   const updateField = (event) => {
     const { name, value } = event.target;
-
     setForm((current) => ({ ...current, [name]: value }));
   };
 
@@ -39,71 +35,78 @@ export function ContactPage() {
         </Reveal>
       </section>
 
-      <div className="grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
+      <div className="grid items-start gap-6 xl:grid-cols-[minmax(0,1fr)_360px]">
         <Reveal>
           <form
             onSubmit={onSubmit}
-            className="rounded-[2rem] border border-white/10 bg-[linear-gradient(160deg,rgba(22,35,66,0.9),rgba(9,15,29,0.97))] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.45)] md:p-8"
+            className="overflow-hidden rounded-[2rem] border border-sky-100 bg-white shadow-[0_4px_24px_rgba(14,165,233,0.09)]"
           >
-            <div className="space-y-5">
-              <Field
-                label="Email"
-                name="email"
-                type="email"
-                value={form.email}
-                onChange={updateField}
-                placeholder="you@company.com"
-              />
+            <div className="space-y-0 divide-y divide-sky-100">
+              <div className="px-6 py-5 md:px-8">
+                <label htmlFor="email" className="block">
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
+                    Email
+                  </span>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={updateField}
+                    required
+                    placeholder="you@company.com"
+                    className="mt-3 block w-full bg-transparent text-base text-slate-900 outline-none placeholder:text-slate-400"
+                  />
+                </label>
+              </div>
 
-              <div className="rounded-[1.4rem] border border-white/8 bg-[rgba(8,14,30,0.56)] px-4 py-4">
-                <div className="font-mono text-xs uppercase tracking-[0.2em] text-slate-400">
+              <div className="px-6 py-5 md:px-8">
+                <div className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
                   Focus Area
                 </div>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-2 text-sm text-sky-100">
-                    <Building2 size={16} className="text-primary" />
+                  <span className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-2 text-sm text-sky-700">
+                    <Building2 size={15} className="text-primary" />
                     End-to-end automotive SoC verification
                   </span>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-300">
-                    UVM
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-300">
-                    Formal
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-300">
-                    GLS
-                  </span>
+                  {["UVM", "Formal", "GLS"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-sky-100 bg-sky-50/60 px-3 py-2 text-sm text-slate-600"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
+              </div>
+
+              <div className="px-6 py-5 md:px-8">
+                <label htmlFor="message" className="block">
+                  <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
+                    Message
+                  </span>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={form.message}
+                    onChange={updateField}
+                    placeholder="Tell us about your SoC, verification scope, timeline, and current challenges."
+                    rows={6}
+                    required
+                    className="mt-3 block w-full resize-none bg-transparent text-base leading-8 text-slate-900 outline-none placeholder:text-slate-400"
+                  />
+                </label>
               </div>
             </div>
 
-            <div className="mt-5 rounded-[1.4rem] border border-white/8 bg-[rgba(8,14,30,0.56)] px-4 py-4">
-              <label
-                htmlFor="message"
-                className="font-mono text-xs uppercase tracking-[0.2em] text-slate-400"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={form.message}
-                onChange={updateField}
-                placeholder="Tell us about your SoC, verification scope, timeline, and current challenges."
-                rows={6}
-                required
-                className="mt-3 w-full resize-none bg-transparent text-base leading-8 text-white outline-none placeholder:text-slate-500"
-              />
-            </div>
-
-            <div className="mt-6 flex flex-col gap-5 border-t border-white/8 pt-6 lg:flex-row lg:items-end lg:justify-between">
-              <p className="max-w-xl text-sm leading-7 text-slate-400">
-                Bharat Silicon works with teams across UVM, formal verification, GLS, coverage
-                closure, and ISO 26262-oriented methodology.
+            <div className="flex flex-col gap-5 border-t border-sky-100 bg-sky-50/50 px-6 py-5 sm:flex-row sm:items-center sm:justify-between md:px-8">
+              <p className="text-sm leading-7 text-slate-500">
+                Bharat Silicon works with teams across UVM, formal verification, GLS,
+                coverage closure, and ISO 26262-oriented methodology.
               </p>
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 font-medium text-white shadow-[0_0_30px_rgba(59,130,246,0.3)] sm:w-auto"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-secondary px-6 py-3.5 font-medium text-white shadow-[0_0_20px_rgba(2,132,199,0.25)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_36px_rgba(2,132,199,0.45)]"
               >
                 Send Inquiry
                 <Send size={16} />
@@ -114,7 +117,7 @@ export function ContactPage() {
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mt-5 rounded-[1.2rem] border border-primary/20 bg-primary/10 px-4 py-3 text-sm text-sky-100"
+                className="mx-6 mb-5 rounded-[1.2rem] border border-primary/25 bg-sky-50 px-4 py-3 text-sm text-sky-700 md:mx-8"
               >
                 Thanks for reaching out. Bharat Silicon will follow up through email.
               </motion.div>
@@ -123,7 +126,7 @@ export function ContactPage() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <aside className="rounded-[2rem] border border-white/10 bg-[linear-gradient(160deg,rgba(22,35,66,0.88),rgba(9,15,29,0.96))] p-6 shadow-[0_18px_60px_rgba(2,6,23,0.45)]">
+          <aside className="rounded-[2rem] border border-sky-100 bg-white p-6 shadow-[0_4px_24px_rgba(14,165,233,0.09)]">
             <div className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
               Direct Contact
             </div>
@@ -133,29 +136,29 @@ export function ContactPage() {
                 <a
                   key={detail.label}
                   href={detail.href}
-                  className="flex items-center justify-between rounded-[1.4rem] border border-white/8 bg-[rgba(8,14,30,0.56)] px-4 py-4 transition-colors hover:border-primary/35"
+                  className="flex items-start justify-between gap-3 rounded-[1.4rem] border border-sky-100 bg-sky-50/60 px-4 py-4 transition-all duration-200 hover:border-sky-200 hover:bg-sky-50"
                 >
                   <div>
                     <div className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
                       {detail.label}
                     </div>
-                    <div className="mt-2 break-words text-sm text-white sm:text-base">
+                    <div className="mt-2 break-all text-sm leading-6 text-slate-800">
                       {detail.value}
                     </div>
                   </div>
-                  <ArrowUpRight className="shrink-0 text-primary" size={18} />
+                  <ArrowUpRight className="mt-0.5 shrink-0 text-primary" size={16} />
                 </a>
               ))}
             </div>
 
-            <div className="mt-5 rounded-[1.4rem] border border-white/10 bg-[linear-gradient(150deg,rgba(122,162,255,0.16),rgba(10,14,22,0.92),rgba(154,124,255,0.14))] p-5">
-              <div className="space-y-4 text-slate-300">
+            <div className="mt-5 rounded-[1.4rem] border border-sky-100 bg-gradient-to-br from-sky-50 to-indigo-50 p-5">
+              <div className="space-y-4 text-sm leading-7 text-slate-600">
                 <div className="flex items-start gap-3">
-                  <Mail className="mt-0.5 shrink-0 text-primary" size={18} />
+                  <Mail className="mt-0.5 shrink-0 text-primary" size={16} />
                   <span>Primary response channel for new project discussions.</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Building2 className="mt-0.5 shrink-0 text-sky-300" size={18} />
+                  <Building2 className="mt-0.5 shrink-0 text-sky-600" size={16} />
                   <span>Share your verification scope, timeline, and current blocker.</span>
                 </div>
               </div>
@@ -164,29 +167,5 @@ export function ContactPage() {
         </Reveal>
       </div>
     </div>
-  );
-}
-
-function Field({
-  label,
-  name,
-  value,
-  onChange,
-  placeholder,
-  type = "text",
-}) {
-  return (
-    <label className="rounded-[1.4rem] border border-white/8 bg-[rgba(8,14,30,0.56)] px-4 py-4">
-      <span className="font-mono text-xs uppercase tracking-[0.2em] text-slate-400">{label}</span>
-      <input
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        required
-        placeholder={placeholder}
-        className="mt-3 w-full bg-transparent text-base text-white outline-none placeholder:text-slate-500"
-      />
-    </label>
   );
 }

@@ -40,10 +40,10 @@ export function CircuitDecoration({ className = "", instanceId = "a" }) {
           x1="200" y1="0" x2="200" y2="400"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0%"   stopColor="#93c5fd" stopOpacity="0.95" />
-          <stop offset="38%"  stopColor="#7aa2ff" stopOpacity="0.88" />
-          <stop offset="68%"  stopColor="#9a7cff" stopOpacity="0.88" />
-          <stop offset="100%" stopColor="#c084fc" stopOpacity="0.95" />
+          <stop offset="0%"   stopColor="#7dd3fc" stopOpacity="0.95" />
+          <stop offset="38%"  stopColor="#38bdf8" stopOpacity="0.88" />
+          <stop offset="68%"  stopColor="#818cf8" stopOpacity="0.88" />
+          <stop offset="100%" stopColor="#a5b4fc" stopOpacity="0.95" />
         </linearGradient>
       </defs>
 

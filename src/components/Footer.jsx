@@ -26,12 +26,6 @@ export function Footer() {
               </Link>
             ))}
             <Link
-              to="/services"
-              className="text-slate-500 transition-colors duration-200 hover:text-slate-900"
-            >
-              Services
-            </Link>
-            <Link
               to="/contact"
               className="rounded-full border border-primary/40 bg-sky-50 px-3 py-1 text-primary transition-all duration-200 hover:border-primary/70 hover:bg-sky-100"
             >

@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-warning: var(--warning);
+  --color-border-strong: var(--border-strong);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+:root {
+  --background: #060d1b;
+  --surface: #12203b;
+  --border-strong: #2a3d66;
+  --primary: #7aa2ff;
+  --secondary: #9a7cff;
+  --warning: #f4c76d;
+  --font-display: "Instrument Serif", serif;
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top, rgba(122, 162, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 78% 12%, rgba(154, 124, 255, 0.14), transparent 26%),
+    radial-gradient(circle at 50% 100%, rgba(125, 211, 252, 0.1), transparent 24%),
+    var(--background);
+  color: #f8fafc;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Enhanced PCB circuit grid — dots at intersections + orthogonal lines */
+.circuit-grid {
+  background-image:
+    radial-gradient(circle, rgba(122, 162, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(rgba(160, 188, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(160, 188, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at top, rgba(122, 162, 255, 0.18), transparent 35%);
+  background-size: 72px 72px, 72px 72px, 72px 72px, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+  mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.14));
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(196, 220, 255, 0.9);
+  text-shadow: 0 0 22px rgba(122, 162, 255, 0.14);
+}
+
+/* Logo gradient border — applied via inline style on BrandMark */
+.logo-gradient-border {
+  background:
+    linear-gradient(#050918, #050918) padding-box,
+    linear-gradient(135deg, #7aa2ff, #9a7cff) border-box;
+  border: 1.5px solid transparent;
+}
+
+.logo-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  transform: translateX(-120%) rotate(18deg);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.06) 35%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.06) 65%,
+    transparent 100%
+  );
+  animation: shimmer 3.8s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(120%) rotate(18deg);
+  }
+}
+
+/* Animated gradient text (used on hero heading accent) */
+.animate-gradient-text {
+  background: linear-gradient(90deg, #93c5fd, #7aa2ff, #c084fc, #9a7cff, #7aa2ff, #93c5fd);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* Gentle float for decorative elements */
+@keyframes float-up {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float-up 5s ease-in-out infinite;
+}
+
+/* Gradient border for cards — logo-inspired */
+.card-gradient-border {
+  position: relative;
+}
+.card-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(122,162,255,0.5), rgba(154,124,255,0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.card-gradient-border:hover::before {
+  opacity: 1;
+}

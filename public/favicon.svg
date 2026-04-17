@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="g" x1="50" y1="0" x2="50" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#7dd3fc"/>
+      <stop offset="38%"  stop-color="#38bdf8"/>
+      <stop offset="68%"  stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#a5b4fc"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <rect width="100" height="100" rx="22"/>
+    </clipPath>
+  </defs>
+
+  <!-- Gradient border ring -->
+  <rect width="100" height="100" rx="22" fill="url(#bg)"/>
+  <!-- Dark background inset -->
+  <rect x="2" y="2" width="96" height="96" rx="20" fill="#040f1e"/>
+
+  <!-- PCB traces — simplified top-left, top-right, bottom-left, bottom-right -->
+  <path d="M 44 23 L 20 23 L 20 10" stroke="url(#g)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="20" cy="10" r="2.2" fill="url(#g)"/>
+  <path d="M 56 23 L 80 23 L 80 10" stroke="url(#g)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="80" cy="10" r="2.2" fill="url(#g)"/>
+  <path d="M 39 62 L 20 62 L 20 80" stroke="url(#g)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="20" cy="80" r="2.2" fill="url(#g)"/>
+  <path d="M 61 62 L 80 62 L 80 80" stroke="url(#g)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="80" cy="80" r="2.2" fill="url(#g)"/>
+
+  <!-- Diamond chip body -->
+  <path d="M 50 17 L 78 45 L 50 73 L 22 45 Z" stroke="url(#g)" stroke-width="2" fill="rgba(122,162,255,0.08)"/>
+  <!-- Inner diamond ring -->
+  <path d="M 50 27 L 68 45 L 50 63 L 32 45 Z" stroke="url(#g)" stroke-width="0.9" stroke-opacity="0.55"/>
+
+  <!-- "B" centred -->
+  <text x="50" y="46" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Arial Black','Helvetica Neue',Arial,sans-serif"
+        font-weight="900" font-size="23" fill="white">B</text>
+</svg>

@@ -116,8 +116,8 @@ export const technologyStack = [
   { name: "Cadence vManager", type: "Analytics", icon: DatabaseZap },
   { name: "Verilog", type: "RTL", icon: CircuitBoard },
   { name: "Python / TCL", type: "Automation", icon: TerminalSquare },
-  { name: "VHDL", type: "Legacy IP", icon: Blocks },
-  { name: "AHB / AXI / APB", type: "Protocols", icon: GitBranch },
+  { name: "AXI · AHB · APB", type: "Bus Protocols", icon: GitBranch },
+  { name: "SPI · I2C · I3C · UART · CAN · PCIe", type: "Serial Protocols", icon: Blocks },
   { name: "Git / GitLab", type: "Collaboration", icon: GitBranch },
   { name: "Linux", type: "Execution", icon: TerminalSquare },
 ];
@@ -128,7 +128,7 @@ export const serviceDetails = [
     summary:
       "Build complete constrained-random and directed-random verification environments for safety-conscious SoC programs.",
     useCases: [
-      "Protocol-compliant verification for AXI, AHB, and APB-based IP and subsystems.",
+      "Protocol-compliant verification for AXI, AHB, APB, SPI, I2C, I3C, UART, CAN, and PCIe IP and subsystems.",
       "Subsystem-level verification with reusable UVCs, scoreboards, and coverage collectors.",
       "Automotive feature validation where reset, interrupt, safety monitor, and power management behavior must be proven.",
     ],

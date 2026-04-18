@@ -76,7 +76,7 @@ export function ServicesPage() {
             {[
               "Bangalore-based partner with focused automotive verification expertise.",
               "Coverage-driven sign-off mindset anchored in metrics and debug velocity.",
-              "Direct familiarity with AXI, AHB, APB, ISO 26262, Xcelium, Jasper, and vManager workflows.",
+              "Direct familiarity with AXI, AHB, APB, SPI, I2C, I3C, UART, CAN, PCIe, ISO 26262, Xcelium, Jasper, and vManager workflows.",
             ].map((item) => (
               <div
                 key={item}

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, CheckCircle2, Mail } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Bot, BrainCircuit, CheckCircle2, Mail, Sparkles, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { CircuitDecoration } from "../components/CircuitDecoration";
 import { Counter } from "../components/Counter";
@@ -39,18 +39,39 @@ function HeroSection() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/50" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
             </span>
-            Automotive SoC Verification Experts
+            IP &amp; SoC Verification Experts
           </motion.div>
 
           <div className="space-y-6">
             <h1 className="max-w-4xl text-balance font-display text-5xl leading-[1.02] tracking-[-0.03em] text-slate-900 sm:text-6xl lg:text-7xl">
-              End-to-End{" "}
-              <span className="animate-gradient-text italic">Verification</span> for Next-Gen{" "}
-              <span className="text-outline">Silicon</span>
+              <span className="animate-gradient-text">AI-Driven</span>{" "}
+              Verification for{" "}
+              <span className="text-outline">Automotive Silicon</span>
             </h1>
+
+            {/* AI feature strip */}
+            <div className="flex flex-wrap gap-2">
+              {[
+                { label: "ML-Assisted Coverage Closure" },
+                { label: "AI Bug Triage" },
+                { label: "Intelligent Regression" },
+                { label: "LLM-Aided Assertion Gen" },
+              ].map(({ label }) => (
+                <motion.span
+                  key={label}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-secondary/25 bg-indigo-50 px-3 py-1.5 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-indigo-600"
+                  whileHover={{ scale: 1.04 }}
+                  transition={{ duration: 0.15 }}
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-secondary" />
+                  {label}
+                </motion.span>
+              ))}
+            </div>
+
             <p className="max-w-2xl text-pretty text-lg leading-8 text-slate-600">
-              Bharat Silicon helps automotive teams reach sign-off with confidence through UVM,
-              formal verification, gate-level simulation, and scalable testbench architecture.
+              Bharat Silicon combines AI-assisted tooling with deep UVM, formal, and GLS expertise
+              to help automotive teams reach sign-off faster and with higher confidence.
             </p>
           </div>
 
@@ -109,7 +130,7 @@ function HeroSection() {
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
                   ["Methodology", "Plan-to-sign-off verification architecture"],
-                  ["Protocols", "AHB, AXI, APB, safety interfaces"],
+                  ["Protocols", "AXI · AHB · APB · SPI · I2C · I3C · UART · CAN · PCIe"],
                   ["Tools", "Xcelium, Jasper, vManager"],
                   ["Automation", "Python, TCL, regression orchestration"],
                 ].map(([label, detail]) => (
@@ -372,7 +393,7 @@ function TechnologySection() {
           return (
             <Reveal key={item.name} delay={index * 0.04}>
               <motion.div
-                className="group rounded-[1.55rem] border border-sky-100 bg-white p-5"
+                className="group rounded-[1.55rem] border border-sky-100 bg-white p-5 min-h-[160px]"
                 whileHover={{
                   y: -4,
                   borderColor: "rgba(2,132,199,0.4)",
@@ -392,7 +413,7 @@ function TechnologySection() {
                     {item.type}
                   </span>
                 </div>
-                <h3 className="mt-5 text-xl font-medium text-slate-900">{item.name}</h3>
+                <h3 className={["mt-5 font-medium text-slate-900", item.name.length > 15 ? "text-base" : "text-xl"].join(" ")}>{item.name}</h3>
               </motion.div>
             </Reveal>
           );
@@ -451,11 +472,97 @@ function CTASection() {
   );
 }
 
+const AI_CAPABILITIES = [
+  {
+    icon: BrainCircuit,
+    title: "ML-Assisted Coverage Closure",
+    description:
+      "Machine learning models analyse coverage holes and recommend targeted stimulus to close gaps faster than manual triage.",
+  },
+  {
+    icon: Bot,
+    title: "AI Bug Triage & Root Cause",
+    description:
+      "Automated classification of simulation failures using pattern recognition — reducing debug cycle time significantly.",
+  },
+  {
+    icon: Sparkles,
+    title: "LLM-Aided Assertion Generation",
+    description:
+      "Large language models assist in generating SVA properties from natural-language specifications and RTL intent.",
+  },
+  {
+    icon: Zap,
+    title: "Intelligent Regression Pruning",
+    description:
+      "AI-driven test selection identifies the minimal regression set that maximises coverage signal for each build.",
+  },
+];
+
+function AISection() {
+  return (
+    <section className="mx-auto w-[min(1180px,calc(100%-1.5rem))] py-20">
+      <Reveal>
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-indigo-100 bg-gradient-to-br from-indigo-50 via-white to-sky-50 px-8 py-12 shadow-[0_8px_60px_rgba(79,70,229,0.10)] md:px-14">
+          {/* Background glow */}
+          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-indigo-200/30 blur-[100px]" />
+          <div className="pointer-events-none absolute -bottom-10 -left-10 h-52 w-52 rounded-full bg-sky-200/30 blur-[80px]" />
+
+          <div className="relative z-10">
+            {/* Header */}
+            <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-secondary/25 bg-indigo-50 px-4 py-2 font-mono text-[0.72rem] uppercase tracking-[0.24em] text-indigo-600">
+                  <BrainCircuit size={12} />
+                  AI-Driven Verification
+                </div>
+                <h2 className="mt-4 max-w-xl text-balance font-display text-4xl leading-[1.08] tracking-[-0.025em] text-slate-900 md:text-5xl">
+                  Verification intelligence,{" "}
+                  <span className="animate-gradient-text">built in.</span>
+                </h2>
+                <p className="mt-4 max-w-lg text-base leading-8 text-slate-600">
+                  Bharat Silicon integrates AI tooling across the verification lifecycle —
+                  from coverage closure to assertion generation — so your team moves faster
+                  without trading correctness for speed.
+                </p>
+              </div>
+            </div>
+
+            {/* Capability cards */}
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+              {AI_CAPABILITIES.map((cap, index) => {
+                const Icon = cap.icon;
+                return (
+                  <Reveal key={cap.title} delay={index * 0.07}>
+                    <motion.div
+                      className="flex h-full flex-col rounded-[1.5rem] border border-indigo-100 bg-white p-5 shadow-sm"
+                      whileHover={{ y: -4, boxShadow: "0 12px 40px rgba(79,70,229,0.12)", transition: { duration: 0.2 } }}
+                    >
+                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-secondary/20 bg-indigo-50 text-secondary">
+                        <Icon size={18} />
+                      </div>
+                      <h3 className="mt-4 text-base font-semibold leading-snug text-slate-900">
+                        {cap.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-7 text-slate-500">{cap.description}</p>
+                    </motion.div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
 export function HomePage() {
   return (
     <>
       <HeroSection />
       <StatsBar />
+      <AISection />
       <ServicesSection />
       <MethodologySection />
       <VerificationDashboard />

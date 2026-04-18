@@ -9,8 +9,8 @@ export function Footer() {
         <div className="space-y-4">
           <BrandMark />
           <p className="max-w-md text-sm leading-7 text-slate-500">
-            Premium verification services for automotive SoCs spanning UVM, formal, GLS, and
-            sign-off readiness.
+            AI-driven verification services for automotive IPs and SoCs — UVM, formal, GLS,
+            and full sign-off readiness.
           </p>
         </div>
 
